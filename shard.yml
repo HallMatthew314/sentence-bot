@@ -1,0 +1,13 @@
+name: sentence-bot
+version: 0.1.0
+
+authors:
+  - Matthew Hall <hallmatthew314@gmail.com>
+
+targets:
+  sentence-bot:
+    main: src/sentence-bot.cr
+
+crystal: 1.1.1
+
+license: MIT
