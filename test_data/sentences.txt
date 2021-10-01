@@ -1,0 +1,4 @@
+This sentence tests type a: %a%.
+This sentence tests type b: %b%.
+This sentence tests type c: %c%.
+This sentence uses types a, b, and c in reverse order: %c% %b% %a%.
