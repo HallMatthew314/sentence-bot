@@ -1,6 +1,6 @@
 # sentence-bot
 
-TODO: Write a description here
+A tool for generating randomized sentences.
 
 ## Installation
 

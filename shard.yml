@@ -6,7 +6,7 @@ authors:
 
 targets:
   sentence-bot:
-    main: src/sentence-bot.cr
+    main: src/sentencebot.cr
 
 crystal: 1.1.1
 
