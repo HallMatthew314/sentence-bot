@@ -1,26 +1,38 @@
 # TODO: Write documentation for `SentenceBot`
 
-require "./filelist.cr"
+require "./sentencelist.cr"
 
 module SentenceBot
   VERSION = "0.1.0"
 
   def self.main
-    FileList.test
+    data_dir_path = Path.new("test_data")
+    data_dir = Dir.new(data_dir_path)
+    sentences = nil
+    categories = {} of String => FileList
 
-    # Get list of sentences
-    sentences = FileList.new("test_data/sentences.txt", true)
+    data_dir.each_child do |e|
+      if e == "sentences.txt"
+        sentences = SentenceList.new(data_dir_path / "sentences.txt")
+      elsif e =~ /\.txt$/
+        categories[e[0, e.size - 4]] = FileList.new(data_dir_path / e)
+      end
+    end
 
-    # Take one at random
-    s = sentences.sample
+    if sentences.nil?
+      STDERR.print("Couldn't find 'sentences.txt'\n")
+      exit(1)
+    end
 
-    # Substitute every tag with a random string in that category
-    s_modified = s
+    # # Take one at random
+    # s = sentences.sample
 
-    # Print to STDOUT
-    puts s_modified
+    # # Substitute every tag with a random string in that category
+    # s_modified = s
+
+    # # Print to STDOUT
+    # puts s_modified
   end
 end
 
 SentenceBot.main
-

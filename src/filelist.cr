@@ -1,10 +1,9 @@
 class FileList
-
   def self.test : Nil
     puts "foo"
   end
 
-  def initialize(path, @allow_duplicates=false)
+  def initialize(path, @allow_duplicates = false)
     @items = File.read_lines(path)
   end
 
@@ -20,4 +19,3 @@ class FileList
     end
   end
 end
-
