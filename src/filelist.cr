@@ -4,15 +4,19 @@ class FileList
     puts "foo"
   end
 
-  def initialize(path)
+  def initialize(path, @allow_duplicates=false)
     @items = File.read_lines(path)
   end
 
-  def sample(i, allow_duplicates=False) : Array(String)
-    if allow_duplicates
+  def sample : String
+    sample(1)[0]
+  end
+
+  def sample(i) : Array(String)
+    if @allow_duplicates
       @items.sample(i)
     else
-      [] of String
+      ["TODO"]
     end
   end
 end
