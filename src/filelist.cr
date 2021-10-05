@@ -1,8 +1,4 @@
 class FileList
-  def self.test : Nil
-    puts "foo"
-  end
-
   def initialize(path, @allow_duplicates = false)
     @items = File.read_lines(path)
     @items.shuffle! unless @allow_duplicates
