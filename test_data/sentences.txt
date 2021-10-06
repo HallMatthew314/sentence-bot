@@ -2,3 +2,9 @@ This sentence tests type a: %a%.
 This sentence tests type b: %b%.
 This sentence tests type c: %c%.
 This sentence uses types a, b, and c in reverse order: %c% %b% %a%.
+This sentence uses a variable: %?x%
+This sentence uses one variable once, then another twice: %?x% %?y% %?y%
+This sentence uses four different variables: %?w% %?x% %?y% %?z%
+This sentence uses four identical variables: %?x% %?x% %?x% %?x%
+This sentence uses type c, then a variable: %c% %?x%
+This sentence uses type c, then a variable named 'c': %c% %?c%
