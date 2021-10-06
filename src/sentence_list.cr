@@ -1,8 +1,8 @@
-require "./filelist.cr"
+require "./file_list.cr"
 require "./sentence.cr"
 
 class SentenceList
-  def initialize(path, allow_duplicates = false)
+  def initialize(path, allow_duplicates = true)
     @file_list = FileList.new(path, allow_duplicates)
   end
 
