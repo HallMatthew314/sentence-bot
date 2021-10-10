@@ -1,6 +1,8 @@
 class FileList
+  @items : Array(String)
+
   def initialize(path, @allow_duplicates = true)
-    @items = File.read_lines(path)
+    @items = File.read_lines(path).reject &.empty?
     @items.shuffle! unless @allow_duplicates
   end
 
